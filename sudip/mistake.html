@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stylish Buttons</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #f3f3f3, #d4e0ff);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            color: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease-in-out;
+            outline: none;
+        }
+
+        /* View Button Styles */
+        .btn-view {
+            background: linear-gradient(45deg, #4a90e2, #007bff);
+        }
+
+        .btn-view:hover {
+            background: linear-gradient(45deg, #007bff, #0056b3);
+            transform: scale(1.1);
+            box-shadow: 0 6px 15px rgba(0, 123, 255, 0.5);
+        }
+
+        /* Block Button Styles (New Red Color Scheme) */
+        .btn-block {
+            background: linear-gradient(45deg, #ff4b2b, #ff0000); /* Light Red to Bright Red */
+        }
+
+        .btn-block:hover {
+            background: linear-gradient(45deg, #ff0000, #b30000); /* Bright Red to Dark Red */
+            transform: scale(1.1);
+            box-shadow: 0 6px 15px rgba(255, 0, 0, 0.5);
+        }
+
+        .icon {
+            font-size: 22px;
+        }
+    </style>
+</head>
+<body>
+
+    <button  id="viewButton"class="btn btn-view"></button>
+    <button id="blockButton" class="btn btn-block"></button>
+
+    <script>
+        function createButton(buttonId, iconSymbol, text) {
+            let button = document.getElementById(buttonId);
+            let icon = document.createElement("span"); 
+            icon.textContent = iconSymbol; 
+            icon.classList.add("icon");
+            button.appendChild(icon); 
+
+            let textNode = document.createTextNode(" " + text);
+            button.appendChild(textNode); 
+        }
+
+        createButton("viewButton", "👁️", "View");
+        createButton("blockButton", "🚫", "Block");
+    </script>
+
+</body>
+</html>
